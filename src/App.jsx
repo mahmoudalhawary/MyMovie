@@ -13,6 +13,7 @@ import SignIn from "./components/SingIn/SingIn";
 import SignUp from "./components/SingUp/SingUp";
 import Protectedroutes from "./components/protectedrouters/Protectedroutes";
 import About from "./components/about/about";
+import Navbar from "./components/Navbar/Navbar";
 export default function App() {
   let roures = createBrowserRouter([
     {
@@ -76,7 +77,16 @@ export default function App() {
             </Protectedroutes>
           ),
         },
-        { path: "*", element: <Notfound /> },
+        {
+          path: "*",
+          element: (
+            <>
+              <div className="w-50 m-auto my-5">
+                <SignIn />
+              </div>
+            </>
+          ),
+        },
       ],
     },
     {
